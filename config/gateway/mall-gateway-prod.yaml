@@ -8,12 +8,12 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: 'http://mall-gateway:8201/mall-auth/rsa/publicKey'
+          jwk-set-uri: 'http://kassadin-gateway:8201/kassadin-auth/rsa/publicKey'
 logging:
   file:
     path: /var/logs
   level:
     root: info
-    com.macro.mall: info
+    com.yosamaru.kassadin: info
 logstash:
   host: logstash

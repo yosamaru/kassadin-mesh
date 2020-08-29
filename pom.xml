@@ -4,21 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.macro.mall</groupId>
-    <artifactId>mall-swarm</artifactId>
+    <groupId>com.yosamaru.kassadin</groupId>
+    <artifactId>kassadin-mesh</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>mall-common</module>
-        <module>mall-mbg</module>
-        <module>mall-demo</module>
-        <module>mall-admin</module>
-        <module>mall-search</module>
-        <module>mall-portal</module>
-        <module>mall-monitor</module>
-        <module>mall-gateway</module>
-        <module>mall-auth</module>
+        <module>kassadin-common</module>
+        <module>kassadin-mbg</module>
+        <module>kassadin-demo</module>
+        <module>kassadin-admin</module>
+        <module>kassadin-search</module>
+        <module>kassadin-portal</module>
+        <module>kassadin-monitor</module>
+        <module>kassadin-gateway</module>
+        <module>kassadin-auth</module>
     </modules>
 
     <parent>
@@ -52,8 +52,8 @@
         <minio.version>7.1.0</minio.version>
         <knife4j.version>2.0.4</knife4j.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
-        <mall-common.version>1.0-SNAPSHOT</mall-common.version>
-        <mall-mbg.version>1.0-SNAPSHOT</mall-mbg.version>
+        <kassadin-common.version>1.0-SNAPSHOT</kassadin-common.version>
+        <kassadin-mbg.version>1.0-SNAPSHOT</kassadin-mbg.version>
     </properties>
 
     <dependencies>
@@ -103,17 +103,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--mall通用模块-->
+            <!--kassadin通用模块-->
             <dependency>
-                <groupId>com.macro.mall</groupId>
-                <artifactId>mall-common</artifactId>
-                <version>${mall-common.version}</version>
+                <groupId>com.yosamaru.kassadin</groupId>
+                <artifactId>kassadin-common</artifactId>
+                <version>${kassadin-common.version}</version>
             </dependency>
-            <!--mall中MBG生成模块-->
+            <!--kassadin中MBG生成模块-->
             <dependency>
-                <groupId>com.macro.mall</groupId>
-                <artifactId>mall-mbg</artifactId>
-                <version>${mall-mbg.version}</version>
+                <groupId>com.yosamaru.kassadin</groupId>
+                <artifactId>kassadin-mbg</artifactId>
+                <version>${kassadin-mbg.version}</version>
             </dependency>
             <!--MyBatis分页插件starter-->
             <dependency>

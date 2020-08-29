@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-app_name='mall-registry'
+app_name='kassadin-registry'
 docker stop ${app_name}
 echo '----stop container----'
 docker rm ${app_name}
@@ -9,5 +9,5 @@ echo '----rm none images----'
 docker run -p 8001:8001 --name ${app_name} \
 -v /etc/localtime:/etc/localtime \
 -v /mydata/app/${app_name}/logs:/var/logs \
--d mall/${app_name}:1.0-SNAPSHOT
+-d kassadin/${app_name}:1.0-SNAPSHOT
 echo '----start container----'

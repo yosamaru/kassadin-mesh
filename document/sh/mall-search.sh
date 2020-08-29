@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-app_name='mall-search'
+app_name='kassadin-search'
 docker stop ${app_name}
 echo '----stop container----'
 docker rm ${app_name}
@@ -9,8 +9,8 @@ echo '----rm none images----'
 docker run -p 8081:8081 --name ${app_name} \
 --link mysql:db \
 --link elasticsearch:es \
---link mall-registry:mall-registry \
+--link kassadin-registry:kassadin-registry \
 -v /etc/localtime:/etc/localtime \
 -v /mydata/app/${app_name}/logs:/var/logs \
--d mall/${app_name}:1.0-SNAPSHOT
+-d kassadin/${app_name}:1.0-SNAPSHOT
 echo '----start container----'
