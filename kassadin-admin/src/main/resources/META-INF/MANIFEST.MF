@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com.yosamaru.kassadin.kassadinAdminApplication
+Main-Class: com.yosamaru.kassadin.KassadinAdminApplication
 

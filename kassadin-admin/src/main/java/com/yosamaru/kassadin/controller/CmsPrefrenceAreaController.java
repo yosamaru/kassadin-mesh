@@ -1,5 +1,6 @@
 package com.yosamaru.kassadin.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.yosamaru.kassadin.common.api.CommonResult;
 import com.yosamaru.kassadin.model.CmsPrefrenceArea;
 import com.yosamaru.kassadin.service.CmsPrefrenceAreaService;
@@ -25,6 +26,7 @@ public class CmsPrefrenceAreaController {
     private CmsPrefrenceAreaService prefrenceAreaService;
 
     @ApiOperation("获取所有商品优选")
+    @SentinelResource("listAll")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<CmsPrefrenceArea>> listAll() {
