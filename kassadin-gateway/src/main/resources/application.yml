@@ -1,5 +1,3 @@
-server:
-  port: 8201
 spring:
   cloud:
     gateway:
@@ -7,42 +5,11 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true #使用小写service-id
-#      routes: #配置路由路径
-#        - id: kassadin-auth
-#          uri: lb://kassadin-auth
-#          predicates:
-#            - Path=/kassadin-auth/**
-#          filters:
-#            - StripPrefix=1
-#        - id: kassadin-admin
-#          uri: lb://kassadin-admin
-#          predicates:
-#            - Path=/kassadin-admin/**
-#          filters:
-#            - StripPrefix=1
-#        - id: kassadin-portal
-#          uri: lb://kassadin-portal
-#          predicates:
-#            - Path=/kassadin-portal/**
-#          filters:
-#            - StripPrefix=1
-#        - id: kassadin-search
-#          uri: lb://kassadin-search
-#          predicates:
-#            - Path=/kassadin-search/**
-#          filters:
-#            - StripPrefix=1
-#        - id: kassadin-demo
-#          uri: lb://kassadin-demo
-#          predicates:
-#            - Path=/kassadin-demo/**
-#          filters:
-#            - StripPrefix=1
   security:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: 'http://localhost:8201/kassadin-auth/rsa/publicKey' #配置RSA的公钥访问地址
+          jwk-set-uri: 'http://localhost:8201/auth/rsa/publicKey' #配置RSA的公钥访问地址
   redis:
     database: 0
     port: 6379
@@ -56,29 +23,29 @@ logging:
     org.springframework.web.reactive: debug
     reactor.ipc.netty: debug
 
-#secure:
-#  ignore:
-#    urls: #配置白名单路径
-#      - "/doc.html"
-#      - "/swagger-resources/**"
-#      - "/swagger/**"
-#      - "/**/v2/api-docs"
-#      - "/**/*.js"
-#      - "/**/*.css"
-#      - "/**/*.png"
-#      - "/**/*.ico"
-#      - "/webjars/springfox-swagger-ui/**"
-#      - "/actuator/**"
-#      - "/kassadin-auth/oauth/token"
-#      - "/kassadin-auth/rsa/publicKey"
-#      - "/kassadin-search/**"
-#      - "/kassadin-portal/sso/**"
-#      - "/kassadin-portal/home/**"
-#      - "/kassadin-portal/product/**"
-#      - "/kassadin-portal/brand/**"
-#      - "/kassadin-admin/admin/login"
-#      - "/kassadin-admin/admin/register"
-#      - "/kassadin-admin/minio/upload"
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/doc.html"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/**/v2/api-docs"
+      - "/**/*.js"
+      - "/**/*.css"
+      - "/**/*.png"
+      - "/**/*.ico"
+      - "/webjars/springfox-swagger-ui/**"
+      - "/actuator/**"
+      - "/auth/oauth/token"
+      - "/auth/rsa/publicKey"
+      - "/search/**"
+      - "/portal/sso/**"
+      - "/portal/home/**"
+      - "/portal/product/**"
+      - "/portal/brand/**"
+      - "/kassadin/admin/login"
+      - "/kassadin/admin/register"
+      - "/kassadin/minio/upload"
 management: #开启SpringBoot Admin的监控
   endpoints:
     web:

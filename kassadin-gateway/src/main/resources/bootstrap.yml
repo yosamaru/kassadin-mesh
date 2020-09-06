@@ -1,5 +1,25 @@
+server:
+  port: 8201
 spring:
-  profiles:
-    active: dev
   application:
     name: kassadin-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        group: ${kassadin.gateway.dynamicRoute.group}
+        server-addr: localhost:8848
+        file-extension: json
+    sentinel:
+      transport:
+        dashboard: localhost:8858
+        port: 8721
+      eager: true
+kassadin:
+  gateway:
+    dynamicRoute:
+      enabled: true
+      dataType: nacos
+      dataId: "FIRE_ROUTES"
+      group: "FIRE_WALK"
