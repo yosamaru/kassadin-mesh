@@ -3,7 +3,6 @@ package com.yosamaru.kassadin.route;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.cloud.nacos.NacosConfigManager;
-import com.alibaba.cloud.nacos.NacosConfigProperties;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.nacos.api.config.listener.Listener;
 import com.alibaba.nacos.api.exception.NacosException;
@@ -52,7 +51,7 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
         } catch (NacosException e) {
             log.error("获取RouteDefinition异常！", e);
         }
-        return Flux.fromIterable(CollUtil.newArrayList());
+        return Flux.fromIterable(new ArrayList<>());
     }
 
     /**

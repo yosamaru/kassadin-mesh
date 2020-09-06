@@ -5,16 +5,6 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true #使用小写service-id
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: 'http://localhost:8201/auth/rsa/publicKey' #配置RSA的公钥访问地址
-  redis:
-    database: 0
-    port: 6379
-    host: localhost
-    password:
 
 logging:
   level:
@@ -23,29 +13,6 @@ logging:
     org.springframework.web.reactive: debug
     reactor.ipc.netty: debug
 
-secure:
-  ignore:
-    urls: #配置白名单路径
-      - "/doc.html"
-      - "/swagger-resources/**"
-      - "/swagger/**"
-      - "/**/v2/api-docs"
-      - "/**/*.js"
-      - "/**/*.css"
-      - "/**/*.png"
-      - "/**/*.ico"
-      - "/webjars/springfox-swagger-ui/**"
-      - "/actuator/**"
-      - "/auth/oauth/token"
-      - "/auth/rsa/publicKey"
-      - "/search/**"
-      - "/portal/sso/**"
-      - "/portal/home/**"
-      - "/portal/product/**"
-      - "/portal/brand/**"
-      - "/kassadin/admin/login"
-      - "/kassadin/admin/register"
-      - "/kassadin/minio/upload"
 management: #开启SpringBoot Admin的监控
   endpoints:
     web:
