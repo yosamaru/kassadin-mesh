@@ -4,22 +4,49 @@ spring:
   application:
     name: kassadin-gateway
   cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true #使用小写service-id
     nacos:
       discovery:
         server-addr: localhost:8848
       config:
-        group: ${kassadin.gateway.dynamicRoute.group}
+        group: DEFAULT_GROUP
         server-addr: localhost:8848
-        file-extension: json
+        file-extension: properties
+        refresh-enabled: true
     sentinel:
       transport:
         dashboard: localhost:8858
         port: 8721
+        client-ip: localhost
+        clientIp: localhost
       eager: true
+      datasource:
+        kassadin-gateway:
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name}-gw-flow-rules
+            groupId: GATEWAY_GROUP
+            data-type: json
+            rule-type: gw-flow
+      enabled: true
+      filter:
+        enabled: false
+management: #开启SpringBoot Admin的监控
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 kassadin:
   gateway:
     dynamicRoute:
       enabled: true
       dataType: nacos
-      dataId: "FIRE_ROUTES"
-      group: "FIRE_WALK"
+      dataId: kassdin_routes
+      group: ROUTE_FORWARDING_GROUP

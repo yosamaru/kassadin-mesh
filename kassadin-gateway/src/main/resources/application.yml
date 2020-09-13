@@ -1,23 +1,6 @@
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true #使用小写service-id
-
 logging:
   level:
-    org.springframework.cloud.gateway: trace
-    org.springframework.http.server.reactive: debug
-    org.springframework.web.reactive: debug
-    reactor.ipc.netty: debug
-
-management: #开启SpringBoot Admin的监控
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: always
+    org.springframework.cloud.gateway: error
+    org.springframework.http.server.reactive: error
+    org.springframework.web.reactive: error
+    reactor.ipc.netty: error
