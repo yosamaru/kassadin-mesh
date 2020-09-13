@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.yosamaru.kassadin</groupId>
-            <artifactId>kassadin-mbg</artifactId>
+            <artifactId>kassadin-datasource</artifactId>
         </dependency>
         <!--mongodb依赖配置-->
         <dependency>

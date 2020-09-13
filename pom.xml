@@ -11,7 +11,7 @@
 
     <modules>
         <module>kassadin-common</module>
-        <module>kassadin-mbg</module>
+        <module>kassadin-datasource</module>
         <module>kassadin-demo</module>
         <module>kassadin-admin</module>
         <module>kassadin-search</module>
@@ -54,7 +54,7 @@
         <knife4j.version>2.0.4</knife4j.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
         <kassadin-common.version>1.0-SNAPSHOT</kassadin-common.version>
-        <kassadin-mbg.version>1.0-SNAPSHOT</kassadin-mbg.version>
+        <kassadin-datasource.version>1.0-SNAPSHOT</kassadin-datasource.version>
         <sentinel.version>2.2.1.RELEASE</sentinel.version>
         <sentinel-nacos.version>1.8.0</sentinel-nacos.version>
         <swagger2.version>2.8.0</swagger2.version>
@@ -111,11 +111,11 @@
                 <artifactId>kassadin-common</artifactId>
                 <version>${kassadin-common.version}</version>
             </dependency>
-            <!--kassadin中MBG生成模块-->
+            <!--kassadin中datasource生成模块-->
             <dependency>
                 <groupId>com.yosamaru.kassadin</groupId>
-                <artifactId>kassadin-mbg</artifactId>
-                <version>${kassadin-mbg.version}</version>
+                <artifactId>kassadin-datasource</artifactId>
+                <version>${kassadin-datasource.version}</version>
             </dependency>
             <!--MyBatis分页插件starter-->
             <dependency>

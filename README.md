@@ -21,7 +21,7 @@
 ``` lua
 kassadin
 ├── kassadin-common -- 工具类及通用代码模块
-├── kassadin-mbg -- MyBatisGenerator生成的数据库操作代码模块
+├── kassadin-datasource -- MyBatisGenerator生成的数据库操作代码模块
 ├── kassadin-auth -- 基于Spring Security Oauth2的统一的认证中心
 ├── kassadin-gateway -- 基于Spring Cloud Gateway的微服务API网关服务
 ├── kassadin-monitor -- 基于Spring Boot Admin的微服务监控中心

@@ -59,7 +59,7 @@
         </dependency>
         <dependency>
             <groupId>com.yosamaru.kassadin</groupId>
-            <artifactId>kassadin-mbg</artifactId>
+            <artifactId>kassadin-datasource</artifactId>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>

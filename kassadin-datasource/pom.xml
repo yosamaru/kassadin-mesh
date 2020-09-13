@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.yosamaru.kassadin</groupId>
-    <artifactId>kassadin-mbg</artifactId>
+    <artifactId>kassadin-datasource</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>kassadin-mbg</name>
-    <description>kassadin-mbg project for kassadin</description>
+    <name>kassadin-datasource</name>
+    <description>kassadin-datasource project for kassadin</description>
 
     <parent>
         <groupId>com.yosamaru.kassadin</groupId>

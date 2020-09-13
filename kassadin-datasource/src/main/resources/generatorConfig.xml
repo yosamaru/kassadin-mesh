@@ -30,12 +30,12 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.yosamaru.kassadin.model" targetProject="kassadin-mbg\src\main\java"/>
+        <javaModelGenerator targetPackage="com.yosamaru.kassadin.model" targetProject="kassadin-datasource\src\main\java"/>
 
-        <sqlMapGenerator targetPackage="com.yosamaru.kassadin.mapper" targetProject="kassadin-mbg\src\main\resources"/>
+        <sqlMapGenerator targetPackage="com.yosamaru.kassadin.mapper" targetProject="kassadin-datasource\src\main\resources"/>
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.yosamaru.kassadin.mapper"
-                             targetProject="kassadin-mbg\src\main\java"/>
+                             targetProject="kassadin-datasource\src\main\java"/>
         <!--生成全部表tableName设为%-->
         <table tableName="%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>

@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.yosamaru.kassadin</groupId>
-            <artifactId>kassadin-mbg</artifactId>
+            <artifactId>kassadin-datasource</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
