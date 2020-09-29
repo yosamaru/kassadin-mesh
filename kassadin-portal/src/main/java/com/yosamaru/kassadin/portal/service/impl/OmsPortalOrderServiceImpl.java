@@ -8,14 +8,17 @@ import com.yosamaru.kassadin.common.exception.Asserts;
 import com.yosamaru.kassadin.common.service.RedisService;
 import com.yosamaru.kassadin.mapper.*;
 import com.yosamaru.kassadin.model.*;
-import com.yosamaru.kassadin.portal.component.CancelOrderSender;
+import com.yosamaru.kassadin.portal.component.MessageSender;
 import com.yosamaru.kassadin.portal.dao.PortalOrderDao;
 import com.yosamaru.kassadin.portal.dao.PortalOrderItemDao;
 import com.yosamaru.kassadin.portal.dao.SmsCouponHistoryDao;
 import com.yosamaru.kassadin.portal.domain.*;
 import com.yosamaru.kassadin.portal.service.*;
+import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.stream.binder.BinderHeaders;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -64,7 +67,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     @Autowired
     private OmsOrderItemMapper orderItemMapper;
     @Autowired
-    private CancelOrderSender cancelOrderSender;
+    private MessageSender messageSender;
 
     @Override
     public ConfirmOrderResult generateConfirmOrder(List<Long> cartIds) {
@@ -323,7 +326,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         OmsOrderSetting orderSetting = orderSettingMapper.selectByPrimaryKey(1L);
         long delayTimes = orderSetting.getNormalOrderOvertime() * 60 * 1000;
         //发送延迟消息
-        cancelOrderSender.sendMessage(orderId, delayTimes);
+        messageSender.send(MessageBuilder.withPayload(orderId).setHeader(RocketMQHeaders.MESSAGE_ID, 0).build());
     }
 
     @Override
