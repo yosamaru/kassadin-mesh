@@ -1,13 +1,12 @@
 package com.yosamaru.kassadin.route;
 
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.util.StrUtil;
 import com.alibaba.cloud.nacos.NacosConfigManager;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.nacos.api.config.listener.Listener;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.yosamaru.kassadin.config.GatewayConfig;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
@@ -86,7 +85,7 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
     }
 
     private List<RouteDefinition> getListByStr(String config) {
-        if (StrUtil.isNotEmpty(config)) {
+        if (StringUtils.isNotBlank(config)) {
             return JSONObject.parseArray(config, RouteDefinition.class);
         }
         return new ArrayList<>(0);
