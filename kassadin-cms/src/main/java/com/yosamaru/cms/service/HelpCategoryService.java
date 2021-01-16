@@ -12,4 +12,5 @@ import com.yosamaru.cms.pojo.entity.HelpCategoryDO;
  * @since 2020-12-12
  */
 public interface HelpCategoryService extends IService<HelpCategoryDO> {
+    void getHelpAllCategory();
 }

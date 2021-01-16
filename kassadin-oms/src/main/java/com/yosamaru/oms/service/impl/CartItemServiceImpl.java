@@ -1,10 +1,15 @@
 package com.yosamaru.oms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.yosamaru.oms.client.OrderBasicInfoClient;
+import com.yosamaru.oms.config.OmsMessageConsume;
 import com.yosamaru.oms.dao.CartItemMapper;
 import com.yosamaru.oms.pojo.entity.CartItemDO;
 import com.yosamaru.oms.service.CartItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,10 +22,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class CartItemServiceImpl extends ServiceImpl<CartItemMapper, CartItemDO> implements CartItemService {
 
-//    @Autowired
-//    private OrderBasicInfoClient orderBasicInfoClient;
-//
-//    public List<OrderItemModel> getOrderBasicInfo() {
-//        return orderBasicInfoClient.getAllOrderItem();
-//    }
+    @Autowired
+    private OrderBasicInfoClient orderBasicInfoClient;
+
+    @Autowired
+    private OmsMessageConsume omsMessageConsume;
+
+    // fegin
+    public List<String> getOrderBasicInfo() {
+        return orderBasicInfoClient.getAllOrderItem();
+    }
+
+    // rocketmq
+    @Override
+    public String getHelpAllCategory() {
+        return null;
+    }
 }
