@@ -18,6 +18,8 @@
         <module>kassadin-sms</module>
         <module>kassadin-ums</module>
         <module>kassadin-common</module>
+        <module>kassadin-admin</module>
+        <module>kassadin-batch</module>
     </modules>
 
     <parent>

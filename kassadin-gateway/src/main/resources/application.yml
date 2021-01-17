@@ -1,4 +1,4 @@
-logging:
+ logging:
   level:
     org.springframework.cloud.gateway: error
     org.springframework.http.server.reactive: error

@@ -41,7 +41,7 @@ public class HelpCategoryServiceImpl extends ServiceImpl<HelpCategoryMapper, Hel
         log.info(helpCategoryDOS.toString());
 
         final GenericMessage message = AfterSalesMessageBo.builder().messageId(new Random().nextLong()).content("我要发送消息了").build();
-        final boolean result = cmsMessageSend.sendAfterSales(message);
+        final boolean result = cmsMessageSend.sendDelay(message);
         log.info("getHelpAllCategory 发送消息结果：{}", result);
     }
 }

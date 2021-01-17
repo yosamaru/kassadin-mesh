@@ -2,7 +2,7 @@ server:
   port: 8201
 spring:
   application:
-    name: kassadin-gateway
+    name: gateway
   cloud:
     gateway:
       discovery:
@@ -12,7 +12,7 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
-      config:
+      config: #config配置中心配置
         group: DEFAULT_GROUP
         server-addr: localhost:8848
         file-extension: properties
@@ -35,6 +35,11 @@ spring:
       enabled: true
       filter:
         enabled: false
+  boot:
+    admin:
+      client:
+        url: https://localhost:8882
+
 management: #开启SpringBoot Admin的监控
   endpoints:
     web:
