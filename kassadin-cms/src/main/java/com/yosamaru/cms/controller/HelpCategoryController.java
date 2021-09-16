@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,7 +30,7 @@ public class HelpCategoryController {
 
     @ApiOperation(value = "获取订单信息", notes = "获取订单信息")
     @GetMapping(value = "get-all-order-item")
-    private List<String> getOrderBasicInfo() {
+    public List<String> getOrderBasicInfo() {
         final List<String> orderInfo = Lists.newArrayList();
         orderInfo.add("1");
         orderInfo.add("2");

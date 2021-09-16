@@ -2,6 +2,10 @@ package com.yosamaru.cms.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.yosamaru.cms.pojo.entity.HelpDO;
+import com.yosamaru.cms.pojo.query.HelpInfoQuery;
+import com.yosamaru.cms.pojo.vo.HelpVO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.yosamaru.cms.pojo.entity.HelpDO;
  */
 public interface HelpService extends IService<HelpDO> {
 
+    List<HelpVO> findHelpInfo(final HelpInfoQuery helpInfoQuery);
 }
