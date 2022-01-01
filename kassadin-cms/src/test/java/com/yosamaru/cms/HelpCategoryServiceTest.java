@@ -1,4 +1,4 @@
-package com.kassadin.cms;
+package com.yosamaru.cms;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
